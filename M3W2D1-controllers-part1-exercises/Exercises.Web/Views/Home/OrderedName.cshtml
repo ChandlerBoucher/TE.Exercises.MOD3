@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Ordered Name";
+}
+<h1 class="label">Enter Name</h1>
+@using (Html.BeginForm("OrderedNameResult", "Home", FormMethod.Get))
+{ 
+<p>First name:</p>
+<input type="text" name="FirstName" required/>
+<p>Middle initial:</p>
+<input type="text" name="MiddleInitial" />
+<p>Last name:</p>
+<input type="text" name="LastName" required/>
+
+<h1 class="label">Choose Order</h1>
+
+<label>First MI Last</label><input type="radio" name="Order" value="1" checked/>
+<label>First Last</label><input type="radio" name="Order" value="2" />
+<label>Last, First MI</label><input type="radio" name="Order" value="3" />
+<label>Last, First MI</label><input type="radio" name="Order" value="4" />
+<button type="submit" name="Submit">Submit</button>
+}
+
+
+
+

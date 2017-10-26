@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+    int sequenceNum = 196418;
+    int n = 0;
+    int b = 1;
+    int a = 0;
+    int i = 0;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles.css" rel="stylesheet" />
+    <title>Fibonacci</title>
+    <h1>Exercise-2 Fibonacci 25</h1>
+</head>
+<body>
+    <div>
+        @for ( i = 0; i <= sequenceNum; i += n)
+        {
+            n = b + a;
+            a = b;
+            b = n;
+            <li>
+                @n
+            </li>
+        }
+    </div>
+</body>
+</html>

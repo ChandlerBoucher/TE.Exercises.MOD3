@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Last Two";
+}
+
+@using (Html.BeginForm("LastTwoResult", "Home", FormMethod.Get))
+{
+    <h1> Reverse Last Two Characters</h1>
+
+    <label>Word 1: </label><input type="text" name="word1" /><br />
+    <label>Word 2: </label><input type="text" name="word2" /><br />
+    <label>Word 3: </label><input type="text" name="word3" /><br />
+    <label>Word 4: </label><input type="text" ame="word4" /><br />
+    <label>Word 5: </label><input type="text" name="word5" /><br />
+    <label>Word 6: </label><input type="text" name="word6" /><br />
+    <label>Word 7: </label><input type="text" name="word7" /><br />
+    <label>Word 8: </label><input type="text" name="word8" /><br />
+    <label>Word 9: </label><input type="text" name="word9" /><br />
+    <label>Word 10: </label><input type="text" name="word10" /><br />
+}
+<button type="submit">Submit</button>

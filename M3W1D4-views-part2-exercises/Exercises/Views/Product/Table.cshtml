@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Exercises.Models
+@model List<Product>
+
+
+
+<table cellspacing="0">
+    <thead>
+        <tr>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+        </tr>
+        <tr>
+
+            <td> Rating</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+        </tr>
+        <tr>
+            <td>
+                Manufacturer
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Weight(in lbs.)
+            </td>
+        </tr>
+    </thead>
+
+
+
+
+    @foreach (Product item in Model)
+    {
+        <tbody>
+
+            <tr>
+                <td class="imgBlock">
+                    <img class="itemImg" src="~/Content/images/@item.ImageName" alt="a picture of @item.Name" />
+
+
+                    @if (item.IsTopSeller)
+                    {
+                       <p id="bestSell">
+                        BEST SELLER!
+                           </p>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td id="nameData">@item.Name</td>
+            </tr>
+            <tr>
+                <td><img class="ratingData" src="~/Content/images/@((int)item.AverageRating)-star.png" /></td>
+            </tr>
+            <tr>
+                <td class="priceData">@item.Price</td>
+            </tr>
+            <tr>
+                <td class="manufData">@item.Manufacturer</td>
+            </tr>
+            <tr>
+                <td class="weightData">@item.WeightIbLbs</td>
+            </tr>
+
+        </tbody>
+    }
+</table>

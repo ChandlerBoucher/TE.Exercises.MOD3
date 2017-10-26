@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Ordered Name Result";
+}
+@using Exercises.Web.Models;
+@model Name
+
+
+<h1 class="label">Ordered Name</h1>
+
+
+<p>
+    First Name: @Model.firstName
+</p>
+<p>
+    Last Name: @Model.lastName
+</p>
+<p>
+    Middle Initial: @Model.middleInitial
+</p>
+
+@if (Model.order == 1)
+    {
+
+        <p>
+            Ordered: @Model.firstName @Model.middleInitial @Model.lastName
+        </p>
+    }
+    else if (Model.order == 2)
+    {
+        <p>
+            Ordered: @Model.firstName @Model.lastName
+        </p>
+    }
+    else if (Model.order == 3)
+    {
+        <p>
+            Ordered: @Model.lastName,  @Model.firstName @Model.middleInitial
+        </p>
+    }
+    else if (Model.order == 4)
+    {
+        <p>
+            Ordered: @Model.lastName, @Model.firstName
+        </p>
+    }
+    else
+    {
+
+    }

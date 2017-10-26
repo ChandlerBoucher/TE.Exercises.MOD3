@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Baby Lotto";
+}
+
+<h1>Baby Lotto</h1>
+
+<p>Enter three comma delimited numbers for each ticket.</p>
+@using (Html.BeginForm("BabyLottoResult", "Home", FormMethod.Get))
+{
+<label>Ticket 1:</label><br/>
+<input type="text" name="ticket1" required/><br/>
+<label>Ticket 2:</label><br/>
+<input type="text" name="ticket2" required/><br/>
+<label>Ticket 3:</label><br/>
+<input type="text" name="ticket3" required/><br/>
+<label>Ticket 4:</label><br/>
+<input type="text" name="ticket4"required/><br/>
+<label>Ticket 5:</label><br/>
+<input type="text" name="ticket5"required/>
+<button type="submit">Submit</button>
+}

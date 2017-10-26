@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using FormsWithHttpPost.Models;
+@model List<Review>
+
+<img src="~/Content/forDummies.png" alt="a picture of the book: Squirrel Parties for Dummies"/>
+
+<h3>Past Reviews</h3>
+
+<table cellspacing="0">
+
+@foreach(Review review in Model)
+{
+    <tr>
+    <td>
+        @review.Title <br/>@while(review.Rating > 0)
+        {
+            <img class="stars" src="~/Content/star.png" />
+            review.Rating--;
+        }
+    </td>
+    <td>
+        by @review.Username on @review.ReviewDate
+    </td>
+    <td>
+        @review.Message
+    </td>
+    </tr>
+}
+
+</table>

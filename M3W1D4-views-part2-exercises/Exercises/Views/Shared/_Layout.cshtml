@@ -1,0 +1,27 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Views Part 2</title>
+    <link rel="stylesheet" href="~/Content/styles.css" />
+</head>
+<body class="body">
+    <header>
+    <h1>MVC Exercises - Views Part 2: Models</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>@Html.ActionLink("List Layout", "List", "Product")</li>
+            <li>@Html.ActionLink("Table Layout", "Table", "Product")</li>
+            <li>@Html.ActionLink("Tile Layout", "Tile", "Product")</li>
+        </ul>
+    </nav>
+    <section>
+    @RenderBody()
+    </section>
+</body>
+</html>

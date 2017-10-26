@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "FizzBuzz5";
+}
+@using Exercises.Web.Models
+
+@using (Html.BeginForm("FizzBuzzResult", "Home", FormMethod.Get))
+{
+<h1>FizzBuzz Revisited</h1>
+
+<ul style="list-style-type: none">
+
+    <li>
+        <label>Divisable By:</label>
+        <li>
+        <input type="text" name="div1" />
+        </li>
+    </li>
+    <li>
+        <label>Divisable By:</label>
+    </li>
+        <li>
+            <input type="text" name="div2" />
+    </li>
+    <li>
+        <label>Alternative Fizz:</label>
+    </li>
+        <li>
+            <input type="text" name="fizz" />
+    </li>
+    <li>
+        <label>Alternative Buzz</label>
+        </li>
+    <li>
+        <input type="text" name="buzz" />
+    </li>
+    <li>
+        <label>Number 1:</label>
+        </li>
+    <li>
+        <input type="text" name="num1" />
+    </li>
+    <li>
+        <label>Number 2:</label>
+        </li>
+    <li>
+        <input type="text" name="num2" />
+    </li>
+    <li>
+        <label>Number 3:</label>
+        </li>
+    <li>
+        <input type="text" name="num3" />
+    </li>
+    <li>
+        <label>Number 4:</label>
+        </li>
+    <li>
+        <input type="text" name="num4" />
+    </li>
+    <li>
+        <label>Number 5:</label>
+        </li>
+    <li>
+        <input type="text" name="num5" />
+    </li>
+    <li>
+        <button type="submit" name="submit">Submit</button>
+    </li>
+</ul>
+}

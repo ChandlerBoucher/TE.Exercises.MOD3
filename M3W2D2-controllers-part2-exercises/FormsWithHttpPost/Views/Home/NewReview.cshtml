@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using FormsWithHttpPost.Models
+@model Review
+
+@using (Html.BeginForm("NuReview", "Home", FormMethod.Post))
+{
+    <h3>New Book Review</h3>
+
+    <label>Enter your username</label>
+    @Html.TextBoxFor(m => m.Username)<br/>
+    <label>How many stars?</label>
+    @Html.DropDownListFor(m => m.Rating, Review.Ratings)<br/>
+    <label>Provide a title</label>
+    @Html.TextBoxFor(m => m.Title)<br/>
+    <label>Review</label>
+    @Html.TextAreaFor(m => m.Message, 6)<br/>
+
+    <button type="submit">Submit</button>
+}

@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Last Two Result";
+}
+
+@model List<string>
+    <h1>Reverse Last Two Characters</h1>
+<ul style="list-style-type: none">
+
+    @foreach (string word in Model)
+    {
+        string modWord = word;
+        if (word.Length > 1)
+        {
+            char thisChar = word[word.Length - 1];
+            char thatChar = word[word.Length - 2];
+            modWord = word.Substring(0, word.Length - 2) + thisChar + thatChar;
+        }
+        <li>@word : @modWord</li>
+    }
+</ul>

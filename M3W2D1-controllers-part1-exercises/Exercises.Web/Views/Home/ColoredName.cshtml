@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Colored Name";
+}
+
+<h1 class="label">Enter Name</h1>
+
+@using (Html.BeginForm("ColoredNameResult", "Home", FormMethod.Get))
+{
+    <p>First name:</p>
+    <input type="text" name="FirstName" required />
+    <p>Middle initial:</p>
+    <input type="text" name="MiddleInitial" />
+    <p>Last name:</p>
+    <input type="text" name="LastName" required />
+
+    <h1 class="label">Choose Color</h1>
+
+    <label>Red</label><input type="checkbox" name="Color1" value="red"/>
+    <label>Blue</label><input type="checkbox" name="Color2" value="blue"/>
+    <label>Green</label><input type="checkbox" name="Color3" value="green"/>
+
+    <button type="submit" name="Submit">Submit</button>
+}

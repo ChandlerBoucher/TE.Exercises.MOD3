@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Fizz Buzz Result";
+}
+@using Exercises.Web.Models
+@model FizzBuzzer
+<h1>FizzBuzz Revisited</h1>
+<p>Divisable By: @Model.div1<br />
+   Divisable By: @Model.div2<br />
+   Divisable By Both: @Model.div1 and @Model.div2</p>
+
+<p>Alternative Fizz: @Model.fizzer<br />
+   Alternative Buzz: @Model.buzzer</p>
+
+<ul style="list-style-type: none">
+    @foreach (int num in Model.input)
+    {
+        if(num % Model.div1 == 0 && num % Model.div2 == 0)
+        {
+            <li>@num  @Model.fizzer@Model.buzzer</li>
+        }
+        else if(num % Model.div1 == 0)
+        {
+            <li>@num @Model.fizzer</li>
+        }
+        else if(num % Model.div2 == 0)
+        {
+            <li>@num  @Model.buzzer</li>
+        }
+        else
+        {
+            <li>@num</li>
+        }
+    }
+
+    </ul>

@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Colored Name Result";
+}
+
+@using Exercises.Web.Models;
+@model Name
+
+<h1 class="label">Colorized Name</h1>
+<p>
+    First Name: @Model.firstName
+</p>
+<p>
+    Middle Initial: @Model.middleInitial
+</p>
+<p>
+    Last Name: @Model.lastName
+</p>
+
+@foreach (string shade in Model.colors)
+{
+<p style="color: @shade">
+     @Model.firstName @Model.middleInitial @Model.lastName
+</p>
+}

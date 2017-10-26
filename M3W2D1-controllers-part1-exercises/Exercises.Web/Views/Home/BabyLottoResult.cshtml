@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Lotto Results";
+    Ticket result = new Ticket();
+}
+@using Exercises.Web.Models
+@model List<Ticket>
+
+<h1>Baby Lotto</h1>
+
+@foreach (Ticket tick in Model)
+{
+    decimal points = 0;
+
+    for (int i = 1; i < result.nums.Length; i++)
+    {
+        if(result.nums[0] == tick.nums[0] && result.nums[i] == tick.nums[i])
+        {
+            points += 10;
+        }
+    }
+
+    if (points == 20)
+    {
+        <p style="color: green">@tick.nums[0], @tick.nums[1], @tick.nums[2]</p>
+    }
+    else if(points == 10)
+    {
+        <p style="color: silver">@tick.nums[0], @tick.nums[1], @tick.nums[2]</p>
+    }
+    else
+    {
+        <p>@tick.nums[0], @tick.nums[1], @tick.nums[2]</p>
+    }
+
+}

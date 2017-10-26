@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Exercises.Models
+@model List<Product>
+
+@foreach (Product item in Model)
+{
+    <ul class="listBlock">
+        <li><img id="listImg" src="~/Content/images/@item.ImageName" alt="a picture of @item.Name" /></li>
+        <li>
+            <h2>
+                @item.Name
+            </h2>
+            @if (item.IsTopSeller)
+            {
+
+                <h4>BEST SELLER!</h4>
+            }
+
+            <p>
+                by @item.Manufacturer
+            </p>
+
+            @if (item.RemainingStock <= 5)
+            {
+                <p id="lowQuant">
+                    Only @item.RemainingStock left!
+                </p>
+            }
+
+            <p>@item.Price</p>
+
+
+            <p> Weight</p>
+
+
+            <p>@item.WeightIbLbs</p>
+            <img class="ratingData" src="~/Content/images/@((int)item.AverageRating)-star.png" />
+        <li>
+        </li>
+
+
+
+    </ul>
+
+}
